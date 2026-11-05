@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+ROOT="${DSH_NPM_ROOT:-$PREFIX/lib/node_modules}"
+
+exec "$PREFIX/bin/node" --expose-internals \
+  "$ROOT/@deepseek-ai/dsh/lib/bin.js" "$@"
